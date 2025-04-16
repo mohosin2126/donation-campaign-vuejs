@@ -1,4 +1,6 @@
+<script setup>
 
+</script>
 <template>
   <div class="md:w-2/3 mx-auto">
     <nav>
