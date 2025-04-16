@@ -1,38 +1,36 @@
 <script setup>
+import { ref } from 'vue'
+import jsonData from '@/data/data.json'
+import DonationCard from '@/components/donation-card/index.vue'
 
+const data = ref(jsonData)
 </script>
+
 <template>
-  <div class="md:w-2/3 mx-auto">
-    <nav>
-      <div class="lg:flex lg:justify-between lg:items-center mx-16 lg:mt-10 p-4 text-xl font-semibold">
-        <img class="w-40 h-18" src="https://i.ibb.co/VjqG8Np/Logo.png" alt="" />
-        <ul class="md:flex text-center gap-5 mt-5">
-          <li>
-            <router-link
-              to="/"
-              :class="$route.path === '/' ? 'text-red-500' : ''"
-            >
-              Home
-            </router-link>
-          </li>
-          <li>
-            <router-link
-              to="/donation"
-              :class="$route.path === '/donation' ? 'text-red-500' : ''"
-            >
-              Donation
-            </router-link>
-          </li>
-          <li>
-            <router-link
-              to="/statistics"
-              :class="$route.path === '/statistics' ? 'text-red-500' : ''"
-            >
-              Statistics
-            </router-link>
-          </li>
-        </ul>
+  <div>
+    <div
+      class="hero h-96 mt-5"
+      :style="{ backgroundImage: 'url(https://i.ibb.co/PzC8fLR/Rectangle-4281.png)' }"
+    >
+      <div class="hero-overlay bg-opacity-80 bg-white"></div>
+      <div class="hero-content text-center text-neutral-content">
+        <div class="max-w-md">
+          <h1 class="mb-5 text-2xl font-black text-center text-black">
+            I Grow By Helping People In Need
+          </h1>
+          <div class="flex">
+            <input
+              type="text"
+              placeholder="Type here"
+              class="input input-bordered input-accent w-full max-w-xs"
+            />
+            <button class="btn btn-neutral bg-red-500">Search</button>
+          </div>
+        </div>
       </div>
-    </nav>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <DonationCard :categories=data />
+    </div>
   </div>
 </template>

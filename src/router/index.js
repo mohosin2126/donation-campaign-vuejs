@@ -1,13 +1,31 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/home/index.vue'
+import DonationDetails from '@/views/donation/details/index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  linkActiveClass: 'text-red-500',
+  linkExactActiveClass: 'border-indigo-700',
   routes: [
     {
       path: '/',
       name: 'home',
       component: Home,
+    },
+    {
+      path: '/donations',
+      name: 'donation',
+      component: Home,
+    },
+    {
+      path: '/statistics',
+      name: 'statistics',
+      component: Home,
+    },
+    {
+      path: '/donation/:id',
+      name: 'donationDetails',
+      component: DonationDetails,
     },
     // {
     //   path: '/about',
