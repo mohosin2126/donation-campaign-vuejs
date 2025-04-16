@@ -1,5 +1,5 @@
 <template>
-  <div class="md:w-2/3 mx-auto">
+  <div >
     <nav>
       <div
         class="lg:flex lg:justify-between lg:items-center mx-16 lg:mt-10 p-4 text-xl font-semibold"
